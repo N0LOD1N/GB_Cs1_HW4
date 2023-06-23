@@ -1,12 +1,13 @@
 ﻿Console.WriteLine("Задача 25--------------------");
 void Cubify(int numA, int numB)
 {
-    int result = numA;
-    for (int i = 1; i < numB; i++)
+    double result = numA;
+    for (int i = 1; i < Math.Abs(numB); i++)
     {
         result *= numA;
     }
-    Console.WriteLine($" {numA}^{numB} = {result}");
+    if (numB > 0) Console.WriteLine($" {numA}^{numB} = {result}");
+    else if (numB < 0) Console.WriteLine($" {numA}^{numB} = {1 / result}");
 }
 
 Console.WriteLine("Введите два числа:");
@@ -20,7 +21,7 @@ Console.WriteLine("\nЗадача 27--------------------");
 void Summify(int num)
 {
     int sum = 0;
-    while (num != 0) 
+    while (num != 0)
     {
         sum += num % 10;
         num /= 10;
